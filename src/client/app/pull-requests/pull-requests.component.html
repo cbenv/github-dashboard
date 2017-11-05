@@ -1,0 +1,38 @@
+<div class="container padded">
+  <mat-table [dataSource]="openPullRequests">
+    <ng-container matColumnDef="repo">
+      <mat-header-cell *matHeaderCellDef> Repo </mat-header-cell>
+      <mat-cell *matCellDef="let pullRequest"> {{pullRequest.repo}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="number">
+      <mat-header-cell *matHeaderCellDef> Number </mat-header-cell>
+      <mat-cell *matCellDef="let pullRequest"> {{pullRequest.number}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Pull Request Title </mat-header-cell>
+      <mat-cell *matCellDef="let pullRequest">
+        <a href="{{pullRequest.url}}" target="_blank">{{pullRequest.title}}</a>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="openedAt">
+      <mat-header-cell *matHeaderCellDef> Opened </mat-header-cell>
+      <mat-cell *matCellDef="let pullRequest"> {{pullRequest.openedAt}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="mergedAt">
+        <mat-header-cell *matHeaderCellDef> Merged </mat-header-cell>
+        <mat-cell *matCellDef="let pullRequest"> {{pullRequest.mergedAt}} </mat-cell>
+      </ng-container>
+
+    <ng-container matColumnDef="elapsedWeekdays">
+      <mat-header-cell *matHeaderCellDef> Elapsed Weekdays </mat-header-cell>
+      <mat-cell *matCellDef="let pullRequest"> {{pullRequest.elapsedWeekdays}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+  </mat-table>
+</div>

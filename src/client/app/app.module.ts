@@ -7,10 +7,12 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
+import { PullRequestsComponent } from './pull-requests/pull-requests.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PullRequestsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'github-dashboard'}),
