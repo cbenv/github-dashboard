@@ -1,1 +1,12 @@
-{}
+{
+  "github": {
+    "url": "https://api.github.com",
+    "authToken": null,
+    "repositories": [
+      {
+        "owner": "cbenv",
+        "repo": "github-dashboard"
+      }
+    ]
+  }
+}

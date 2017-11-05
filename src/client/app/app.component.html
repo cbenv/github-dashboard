@@ -1,4 +1,4 @@
-<mat-sidenav-container id="angular-universal-seed" class="mat-typography">
+<mat-sidenav-container id="github-dashboard" class="mat-typography">
   
     <!-- Side Menu -->
     <mat-sidenav id="side-menu" #sideMenu mode="over" opened="false">
@@ -10,7 +10,7 @@
     <!-- Header -->
     <mat-toolbar id="header" color="primary">
       <div class="container">
-        <a mat-button routerLink="/"><mat-icon svgIcon="angular"></mat-icon> {{name}}</a>
+        <a mat-button routerLink="/"><mat-icon svgIcon="github-circle"></mat-icon> {{name}}</a>
         <span class="spacer"></span>
         <div id="header-menu" class="toolbar-menu" fxShow fxShow.xs="false">
           <a mat-button *ngFor="let item of menu" routerLink="{{item.path}}" routerLinkActive="active">{{item.title}}</a>

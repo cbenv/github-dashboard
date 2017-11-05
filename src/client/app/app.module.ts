@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'angular-universal-seed'}),
+    BrowserModule.withServerTransition({appId: 'github-dashboard'}),
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
