@@ -4,8 +4,8 @@
     "authToken": null,
     "repositories": [
       {
-        "owner": "cbenv",
-        "repo": "github-dashboard"
+        "owner": "angular",
+        "repo": "angular.js"
       }
     ]
   }

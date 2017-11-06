@@ -28,7 +28,7 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', CLIENT_DIR);
 
-app.use(controller({config}));
+app.use('/api', controller({config}));
 
 app.get('*.*', express.static(CLIENT_DIR));
 app.get('*', (req, res) => {

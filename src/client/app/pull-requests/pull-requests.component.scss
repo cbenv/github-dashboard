@@ -1,4 +1,26 @@
+.mat-table {
+  max-height: calc(100vh - 64px - 2em);
+  overflow: auto;
+}
+
 .mat-header-cell, 
 .mat-cell {
   padding: 1em 1em 1em 0;
+}
+
+.mat-column-title {
+  flex: 2;
+}
+
+.mat-cell a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.mat-cell.mat-column-elapsed-weekdays {
+  color: green;
+}
+
+.mat-cell.mat-column-elapsed-weekdays.stale {
+  color: red;
 }
