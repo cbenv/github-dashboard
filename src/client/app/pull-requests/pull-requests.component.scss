@@ -1,5 +1,5 @@
 .mat-table {
-  max-height: calc(100vh - 64px - 2em);
+  max-height: calc(100vh - 64px - 48px - 2em);
   overflow: auto;
 }
 
@@ -10,6 +10,10 @@
 
 .mat-column-title {
   flex: 2;
+}
+
+.mat-column-elapsed-weekdays {
+  flex: 0.5;
 }
 
 .mat-cell a {
@@ -23,4 +27,10 @@
 
 .mat-cell.mat-column-elapsed-weekdays.stale {
   color: red;
+}
+
+.mat-progress-spinner {
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
 }

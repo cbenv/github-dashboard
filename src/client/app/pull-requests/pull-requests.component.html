@@ -1,25 +1,61 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
 <div class="container padded">
-  <mat-table [dataSource]="openPullRequests">
-    <ng-container matColumnDef="repo">
-      <mat-header-cell *matHeaderCellDef> Repo </mat-header-cell>
-      <mat-cell *matCellDef="let pullRequest">
-        <a href="{{pullRequest.repoUrl}}" target="_blank">{{pullRequest.repo}}</a>
-      </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="title">
-      <mat-header-cell *matHeaderCellDef> Pull Request Title </mat-header-cell>
-      <mat-cell *matCellDef="let pullRequest">
-        <a href="{{pullRequest.url}}" target="_blank">{{pullRequest.title}}</a>
-      </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="elapsed-weekdays">
-      <mat-header-cell *matHeaderCellDef> Elapsed Weekdays </mat-header-cell>
-      <mat-cell *matCellDef="let pullRequest" [ngClass]="{'stale': pullRequest.stale}"> {{pullRequest.elapsedWeekdays}} </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columns;"></mat-row>
-  </mat-table>
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon svgIcon="source-pull"></mat-icon> Open Pull Requests
+      </ng-template>
+      <mat-table [dataSource]="openPullRequests">
+        <ng-container matColumnDef="repo">
+          <mat-header-cell *matHeaderCellDef> Repo </mat-header-cell>
+          <mat-cell *matCellDef="let pullRequest">
+            <a href="{{pullRequest.repoUrl}}" target="_blank">{{pullRequest.repo}}</a>
+          </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Pull Request Title </mat-header-cell>
+          <mat-cell *matCellDef="let pullRequest">
+            <a href="{{pullRequest.url}}" target="_blank">{{pullRequest.title}}</a>
+          </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="elapsed-weekdays">
+          <mat-header-cell *matHeaderCellDef> Elapsed Weekdays </mat-header-cell>
+          <mat-cell *matCellDef="let pullRequest" [ngClass]="{'stale': pullRequest.stale}"> {{pullRequest.elapsedWeekdays}} </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+      </mat-table>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon svgIcon="source-pull"></mat-icon> Merged Pull Requests
+      </ng-template>
+      <mat-table [dataSource]="mergedPullRequests">
+        <ng-container matColumnDef="repo">
+          <mat-header-cell *matHeaderCellDef> Repo </mat-header-cell>
+          <mat-cell *matCellDef="let pullRequest">
+            <a href="{{pullRequest.repoUrl}}" target="_blank">{{pullRequest.repo}}</a>
+          </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Pull Request Title </mat-header-cell>
+          <mat-cell *matCellDef="let pullRequest">
+            <a href="{{pullRequest.url}}" target="_blank">{{pullRequest.title}}</a>
+          </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="elapsed-weekdays">
+          <mat-header-cell *matHeaderCellDef> Weekdays to Merge </mat-header-cell>
+          <mat-cell *matCellDef="let pullRequest" [ngClass]="{'stale': pullRequest.stale}"> {{pullRequest.elapsedWeekdays}} </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+      </mat-table>
+    </mat-tab>
+  </mat-tab-group>  
 </div>

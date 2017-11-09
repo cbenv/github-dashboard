@@ -5,7 +5,7 @@
     "repositories": [
       {
         "owner": "angular",
-        "repo": "angular.js"
+        "repo": "angular"
       }
     ]
   }

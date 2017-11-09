@@ -7,4 +7,6 @@ $light-app-accent: mat-palette($mat-blue-grey, 700, 500, 900);
 $light-app-warn: mat-palette($mat-red);
 $light-app-theme: mat-light-theme($light-app-primary, $light-app-accent, $light-app-warn);
 
-@include angular-material-theme($light-app-theme);
+.light-theme {
+  @include angular-material-theme($light-app-theme);
+}

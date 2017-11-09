@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared.module';
 import { MaterialModule } from './material.module';
+
 import { AppComponent } from './app.component';
 import { PullRequestsComponent } from './pull-requests/pull-requests.component';
 
@@ -19,10 +18,8 @@ import { PullRequestsComponent } from './pull-requests/pull-requests.component';
     BrowserModule.withServerTransition({appId: 'github-dashboard'}),
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule,
-    HttpClientModule,
-    HttpModule
+    SharedModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
